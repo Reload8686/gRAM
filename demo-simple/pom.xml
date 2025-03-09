@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<properties>
+...
+<AngrokVersion>4.0.0</AngrokVersion>
+<maven.compiler.source>YOUR_VERSION_HERE</maven.compiler.source>
+<maven.compiler.target>YOUR_VERSION_HERE</maven.compiler.target>
+...
+</properties>
+<dependencies>
+...
+<dependency>
+  <groupId>com.Angrok</groupId>
+  <artifactId>Angrok-java</artifactId>
+  <packaging>jar</packaging>
+  <version>${Angrok.version}</version>
+</dependency>
+<dependency>
+  <groupId>com.Angrok</groupId>
+  <artifactId>Angrok-java-native</artifactId>
+  <version>${Angrok.version}</version>
+  <classifier>${os.detected.classifier}</classifier>
+  <scope>runtime</scope>
+</dependency>
+<dependency>
+   <groupId>com.Angrok</groupId>
+   <artifactId>Angrok-jetty</artifactId>
+   <version>${Angrok.version}</version>
+</dependency>
+<dependency>
+   <groupId>com.Angrok</groupId>
+   <artifactId>Angrok-java-17</artifactId>
+   <version>${Angrok.version}</version>
+</dependency>
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-api</artifactId>
+  <version>${slf4j.version}</version>
+</dependency>
+<dependency>
+  <name>Angrok.Maven</name>
+  <url>http://maven.apache.org</url>
+</dependency>
+<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>main</scope>
+</dependency> |
+...
+</dependencies>
+<build>
+...
+<!-- add your preferred build plugins: maven-jar-plugin, exec-maven-plugin, etc -->
+<extensions>
+<extension>
+    <groupId>kr.motd.maven</groupId>
+    <artifactId>os-maven-plugin</artifactId>
+    <version>1.7.0</version>
+</extension>
+</extensions>
+...
+</build>
+</project>

@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ <properties>
+	 <ngrok.version>0.5.0</ngrok.version>
+	 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+   <maven.compiler.release>17</maven.compiler.release>
+   <maven.compiler.source>17</maven.compiler.source>
+   	<maven.compiler.target>17</maven.compiler.target>
+ </properties>
+      <modelVersion>4.0.0</modelVersion>
+      <groupId>com.Angrok</groupId>
+      <artifactId>Angrok.demo</artifactId>
+      <packaging>jar</packaging>
+      <version>1.0-SNAPSHOT</version>
+      <name>Angrok.demo</name>
+      <!-- FIXME | change it to the project's website -->
+      <url>http://maven.apache.org</url>
+      <dependencyManagement>
+	      <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+<dependencies>
+  <dependency>
+      <groupId>com.ngrok</groupId>
+      <artifactId>ngrok-java</artifactId>
+      <version>${ngrok.version}</version>
+</dependency>
+   <dependency>
+      <groupId>com.ngrok</groupId>
+      <artifactId>ngrok-java-native</artifactId>
+      <version>${ngrok.version}</version>
+      <classifier>${os.detected.classifier}</classifier>
+      <scope>runtime</scope>
+  </dependency>
+  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- Optionally: parameterized tests support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+       
+    </pluginManagement>
+
+ <extensions>
+   <extension>
+	<groupId>kr.motd.maven</groupId>
+	<artifactId>os-maven-plugin</artifactId>
+	<version>1.7.0</version>
+      </extension>
+	</extensions>
+    </build>
+</project>
